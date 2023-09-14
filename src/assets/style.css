@@ -27,9 +27,25 @@ body {
 section {
   max-width: 1310px;
   margin: 0 auto;
+  width: 100%;
+}
+
+.page1,
+.page2,
+.page3,
+.page4,
+.page5 {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .page1 {
+  height: auto;
   background: url("./hero.svg") no-repeat center center/cover;
   padding: 0 60px 48px;
 }
@@ -57,14 +73,30 @@ section {
   letter-spacing: -1px;
 }
 
-.header a:hover {
-  animation: underline 0.3s ease-in-out forwards;
-}
-
 .header__nav-links {
   display: flex;
   align-items: center;
   gap: 70px;
+}
+.header__nav-link {
+  text-decoration: none;
+  position: relative;
+}
+.header__nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.header__nav-link::after {
+  content: "";
+  transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+  transform: scaleX(0);
+  transform-origin: right;
+  height: 2px;
+  width: 100%;
+  background-color: var(--white);
+  position: absolute;
+  bottom: -4px;
+  left: 0;
 }
 
 .header__cta {
@@ -75,9 +107,37 @@ section {
   background: #fff;
   border-radius: 36px;
   padding: 12px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.header__cta::after {
+  content: "";
+  border-radius: 100px;
+  width: 10%;
+  aspect-ratio: 1/1;
+  transition: transform 0.3s cubic-bezier(0, 0.5, 0.5, 1);
+  transform: scale(0);
+  transform-origin: center;
+  background: var(--primary);
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* left: 50%; */
+  margin: auto;
+}
+.header__cta:hover::after {
+  transform: scale(10);
+}
+.header__cta span {
+  z-index: 2;
+  position: relative;
 }
 
 .header__search-icon {
+  cursor: pointer;
   margin-right: 24px;
   color: #fff;
   font-size: 24px;
@@ -127,6 +187,33 @@ section {
   background: var(--primary);
   border-radius: 36px;
   margin-top: 48px;
+  position: relative;
+  overflow: hidden;
+}
+.hero__cta::after {
+  content: "";
+  border-radius: 100px;
+  width: 10%;
+  aspect-ratio: 1/1;
+  transition: transform 0.4s cubic-bezier(0, 0.5, 0.5, 1);
+  transform: scale(0);
+  transform-origin: center;
+  background: var(--white);
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* left: 50%; */
+  margin: auto;
+}
+.hero__cta:hover::after {
+  transform: scale(10);
+}
+.hero__cta span {
+  z-index: 2;
+  position: relative;
 }
 
 .trust {
@@ -199,7 +286,6 @@ section {
   display: flex;
   gap: 64px;
   align-items: center;
-  padding: 94px 0 156px;
 }
 
 .syllabus > * {
@@ -428,7 +514,6 @@ section {
 .questions {
   flex: 1;
   max-width: none;
-  width: 100%;
   background: url("./bg-questions.svg") no-repeat center center/cover;
   display: flex;
   justify-content: center;
@@ -502,7 +587,35 @@ section {
   font-weight: 600;
   color: var(--black);
   transition: all 0.25s ease-in-out;
+  position: relative;
+  overflow: hidden;
 }
+.questions__submit::after {
+  content: "";
+  border-radius: 100px;
+  width: 10%;
+  aspect-ratio: 1/1;
+  transition: transform 0.2s cubic-bezier(0, 0.5, 0.5, 1);
+  transform: scale(0);
+  transform-origin: center;
+  background: var(--white);
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* left: 50%; */
+  margin: auto;
+}
+.questions__submit:hover::after {
+  transform: scale(10);
+}
+.questions__submit span {
+  z-index: 2;
+  position: relative;
+}
+
 .questions__illustr {
   position: relative;
   background-image: url("./wordpress-bg.svg");
@@ -539,7 +652,7 @@ section {
   row-gap: 20px;
   column-gap: 16px;
 }
-.footer__nav-col a {
+.footer__nav-col > * {
   font-size: 1.1rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
