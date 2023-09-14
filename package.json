@@ -3,10 +3,12 @@
   "source": "src/index.html",
   "scripts": {
     "dev": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.9.3",
+    "gh-pages": "^6.0.0",
     "parcel": "^2.9.3"
   }
 }
