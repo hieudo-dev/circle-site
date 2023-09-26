@@ -30,6 +30,77 @@ section {
   width: 100%;
 }
 
+.glide-up {
+  animation: glide-up 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1s;
+}
+.glide-down {
+  animation: glide-down 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1s;
+}
+.glide-down-close {
+  animation: glide-down-close 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1s;
+}
+.glide-up-close {
+  animation: glide-up-close 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1s;
+}
+.fade-in {
+  animation: fade-in 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1s;
+}
+
+@keyframes glide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glide-up {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glide-down-close {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glide-up-close {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .page1,
 .page2,
 .page3,
@@ -150,7 +221,7 @@ section {
 
 .hero__heading {
   font-size: 4.7rem;
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Comfortaa", sans-serif;
   letter-spacing: -1px;
   color: #fff;
@@ -532,6 +603,7 @@ section {
 
 .questions__heading {
   font-size: 3.4rem;
+  font-weight: 500;
   color: #ffffff;
   font-family: "Comfortaa", sans-serif;
   margin-bottom: 40px;
