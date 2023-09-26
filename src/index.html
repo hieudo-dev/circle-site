@@ -13,8 +13,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="preload"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
     <link rel="stylesheet" href="assets/style.css" />
     <script
@@ -47,22 +49,24 @@
           </div>
           <div class="hero__content">
             <div class="hero__copy">
-              <p class="hero__heading">
+              <p class="hero__heading glide-down">
                 Your next big<br />
                 idea starts here
               </p>
-              <p class="hero__subheading">
+              <p class="hero__subheading glide-down">
                 The ideal framework to learn how to<br />
                 manage all aspects of startup.
               </p>
-              <button class="hero__cta"><span>START FOR FREE</span></button>
+              <button class="hero__cta fade-in">
+                <span>START FOR FREE</span>
+              </button>
             </div>
             <div class="hero__illustration">
               <img src="./assets/hero-illustration.svg" alt="Hero" />
             </div>
           </div>
         </section>
-        <section class="trust">
+        <section class="trust glide-up">
           <img src="./assets/transferwise.svg" class="trust__item" />
           <img src="./assets/woocommerce.svg" class="trust__item" />
           <img src="./assets/paypal.svg" class="trust__item" />
@@ -82,18 +86,18 @@
             <img src="./assets/dash-vertical.svg" class="features__separator" />
           </div>
           <div class="features__item">
-            <div class="features__numb-wrapper">
+            <div class="features__numb-wrapper glide-down-close">
               <img src="./assets/numb.svg" class="features__numb-bg" />
               <p class="features__numb">150+</p>
             </div>
-            <p class="features__description">
+            <p class="features__description glide-up-close">
               Experts share their knowledge on building and growing a web
               presence.
             </p>
             <img src="./assets/dash-vertical.svg" class="features__separator" />
           </div>
           <div class="features__item">
-            <div class="features__numb-wrapper">
+            <div class="features__numb-wrapper glide-down-close">
               <img src="./assets/numb.svg" class="features__numb-bg" />
               <p class="features__numb">10k+</p>
             </div>
