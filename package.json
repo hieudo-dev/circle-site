@@ -5,11 +5,12 @@
     "dev": "parcel",
     "build": "parcel build",
     "deploy": "gh-pages -d dist",
-    "predeploy": "parcel build --public-url ./"
+    "predeploy": "rimraf dist; rimraf .parcel-cache; parcel build --public-url ./"
   },
   "devDependencies": {
     "gh-pages": "6.0.0",
-    "parcel": "~2.9.3"
+    "parcel": "~2.9.3",
+    "rimraf": "^5.0.5"
   },
   "resolutions": {
     "htmlnano": "2.0.3"
