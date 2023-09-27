@@ -34,7 +34,7 @@
     <main>
       <div class="page1">
         <section class="hero">
-          <div class="header">
+          <div class="header glide-down-close">
             <a href="#" aria-label="Circle's homepage">
               <img src="assets/logo.svg" alt="Circle's logo" class="logo" />
             </a>
@@ -87,11 +87,11 @@
 
         <section class="features">
           <div class="features__item">
-            <div class="features__numb-wrapper">
+            <div class="features__numb-wrapper glide-down-close">
               <img alt="" src="./assets/numb.svg" class="features__numb-bg" />
               <p class="features__numb">200+</p>
             </div>
-            <p class="features__description">
+            <p class="features__description glide-up-close">
               Ideal courses to sell physical and digital products from your site
               on WordPress.com
             </p>
@@ -121,7 +121,7 @@
               <img src="./assets/numb.svg" class="features__numb-bg" alt="" />
               <p class="features__numb">10k+</p>
             </div>
-            <p class="features__description">
+            <p class="features__description glide-up-close">
               Small businesses and online stores call WordPress.com home. No
               code, no complexities.
             </p>
@@ -366,10 +366,18 @@
                   class="footer__separator"
                 />
                 <div class="footer__nav-col">
-                  <a href="#">ABOUT</a>
-                  <a href="#">COURSES</a>
-                  <a href="#">PROGRAM</a>
-                  <a href="#">REVIEWS</a>
+                  <div>
+                    <a class="footer__nav-link" href="#">ABOUT</a>
+                  </div>
+                  <div>
+                    <a class="footer__nav-link" href="#">COURSES</a>
+                  </div>
+                  <div>
+                    <a class="footer__nav-link" href="#">PROGRAM</a>
+                  </div>
+                  <div>
+                    <a class="footer__nav-link" href="#">REVIEWS</a>
+                  </div>
                 </div>
                 <img
                   src="assets/dash-vertical.svg"
@@ -377,10 +385,10 @@
                   class="footer__separator"
                 />
                 <div class="footer__nav-col">
-                  <a href="#"> WWW.HALO-LAB.COM </a>
-                  <p>+38 096 272 2100</p>
-                  <a href="#"> MAIL@HALO-LAB.COM </a>
-                  <p>UKRAINE, ODESSA</p>
+                  <a class="footer__nav-link" href="#"> WWW.HALO-LAB.COM </a>
+                  <p class="footer__nav-info">+38 096 272 2100</p>
+                  <a class="footer__nav-link" href="#"> MAIL@HALO-LAB.COM </a>
+                  <p class="footer__nav-info">UKRAINE, ODESSA</p>
                 </div>
               </div>
             </div>
@@ -409,7 +417,7 @@
             </div>
           </section>
           <div class="follow-wrap">
-            Built by <i class="fa-brands fa-github"></i>
+            Built with <i class="fa-solid fa-heart" style="color: red"></i> by
             <a href="#">@hieudodev</a>
             . For more amazing designs like this check out
             <a href="https://webflow.com/@halolabteam"> Halo Lab </a>
