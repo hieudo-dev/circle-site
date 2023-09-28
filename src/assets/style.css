@@ -22,6 +22,7 @@ body {
   --subheading: #ffffff99;
   --input-br: hsla(0, 0%, 100%, 0.3);
   --link: #666;
+  --animation-delay: 0.5s;
 }
 
 section {
@@ -32,23 +33,27 @@ section {
 
 .glide-up {
   animation: glide-up 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 1s;
+  animation-delay: var(--animation-delay);
 }
 .glide-down {
   animation: glide-down 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 1s;
+  animation-delay: var(--animation-delay);
 }
 .glide-down-close {
   animation: glide-down-close 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 1s;
+  animation-delay: var(--animation-delay);
 }
 .glide-up-close {
   animation: glide-up-close 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 1s;
+  animation-delay: var(--animation-delay);
 }
 .fade-in {
   animation: fade-in 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 1s;
+  animation-delay: var(--animation-delay);
+}
+.scale-up {
+  animation: scale-up 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: var(--animation-delay);
 }
 
 @keyframes glide-down {
@@ -100,12 +105,16 @@ section {
     opacity: 1;
   }
 }
+@keyframes scale-up {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 
-.page1,
-.page2,
-.page3,
-.page4,
-.page5 {
+.page {
   min-height: 100vh;
   position: sticky;
   top: 0;
@@ -113,6 +122,16 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.page--out-of-view .glide-up,
+.page--out-of-view .glide-down,
+.page--out-of-view .glide-down-close,
+.page--out-of-view .glide-up-close,
+.page--out-of-view .scale-up,
+.page--out-of-view .fade-in {
+  animation: none;
+  opacity: 0;
 }
 
 .page1 {
