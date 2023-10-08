@@ -4,12 +4,10 @@
   box-sizing: border-box;
 }
 
-button {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0;
-  background: none;
+html {
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 body {
@@ -25,6 +23,13 @@ body {
   --animation-delay: 0.5s;
 }
 
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+}
 section {
   max-width: 1310px;
   margin: 0 auto;
@@ -115,13 +120,13 @@ section {
 }
 
 .page {
-  min-height: 100vh;
-  position: sticky;
-  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    min-height: 100vh;
+  }
 }
 
 .page--out-of-view .glide-up,
@@ -138,10 +143,16 @@ section {
   height: auto;
   background: url("./hero.svg") no-repeat center center/cover;
   padding: 0 60px 48px;
+  @media screen and (max-width: 768px) {
+    padding: 0 16px 56px;
+  }
 }
 
 .hero {
   padding-top: 40px;
+  @media screen and (max-width: 768px) {
+    padding-top: 20px;
+  }
 }
 
 .logo {
@@ -157,16 +168,24 @@ section {
 .header a {
   cursor: pointer;
   color: #fff;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 200;
   font-family: "Open Sans", sans-serif;
   letter-spacing: -1px;
+}
+.header a img {
+  @media screen and (max-width: 768px) {
+    width: 120px;
+  }
 }
 
 .header__nav-links {
   display: flex;
   align-items: center;
   gap: 70px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .header__nav-link {
   text-decoration: none;
@@ -199,6 +218,9 @@ section {
   padding: 12px 48px;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .header__cta::after {
   content: "";
@@ -225,11 +247,14 @@ section {
   position: relative;
 }
 
-.header__search-icon {
+i.header__search-icon {
   cursor: pointer;
   margin-right: 24px;
   color: #fff;
-  font-size: 24px;
+  font-size: 1.5rem;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .header__search-wrapper {
@@ -243,6 +268,9 @@ section {
   font-family: "Comfortaa", sans-serif;
   letter-spacing: -1px;
   color: #fff;
+  @media screen and (max-width: 768px) {
+    font-size: 3.5rem;
+  }
 }
 
 .hero__subheading {
@@ -251,22 +279,36 @@ section {
   font-family: "Open Sans", sans-serif;
   color: #fff;
   margin-top: 24px;
+  @media screen and (max-width: 768px) {
+    margin-top: 12px;
+  }
 }
 
 .hero__copy {
   width: 50%;
   flex-basis: 50%;
   padding-right: 40px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    flex-basis: 100%;
+    padding: 0;
+  }
 }
 
 .hero__illustration {
   width: 50%;
   flex-basis: 50%;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .hero__content {
   margin-top: 120px;
   display: flex;
+  @media screen and (max-width: 768px) {
+    margin-top: 64px;
+  }
 }
 
 .hero__cta {
@@ -278,6 +320,10 @@ section {
   margin-top: 48px;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    margin-top: 24px;
+    padding: 12px 24px;
+  }
 }
 .hero__cta::after {
   content: "";
@@ -309,12 +355,27 @@ section {
   display: flex;
   justify-content: space-between;
   padding: 90px 0;
+  @media screen and (max-width: 768px) {
+    overflow-x: scroll;
+    gap: 30px;
+    padding: 24px 0;
+    margin: 56px 0;
+  }
+}
+.trust__item {
+  @media screen and (max-width: 768px) {
+    width: 30%;
+  }
 }
 .trust__item:first-child {
-  margin-left: 100px;
+  @media screen and (min-width: 768px) {
+    margin-left: 100px;
+  }
 }
 .trust__item:last-child {
-  margin-right: 100px;
+  @media screen and (min-width: 768px) {
+    margin-right: 100px;
+  }
 }
 
 .features {
@@ -322,11 +383,18 @@ section {
   border-radius: 80px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    /* grid-template-rows: 3; */
+  }
 }
 
 .features__item {
   position: relative;
   padding: 0 64px 32px;
+  @media screen {
+    padding: 24px 16px;
+  }
 }
 
 .features__separator {
@@ -334,10 +402,13 @@ section {
   position: absolute;
   bottom: 32px;
   right: 0;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .features__description {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   line-height: 2.2rem;
@@ -365,6 +436,9 @@ section {
   font-weight: 700;
   margin: 40px 0;
   z-index: 1;
+  @media screen and (max-width: 768px) {
+    font-size: 3rem;
+  }
 }
 
 .page2 {
@@ -376,11 +450,23 @@ section {
   gap: 64px;
   align-items: center;
   padding: 64px 0;
+  @media screen and (max-width: 768px) {
+    padding: 56px 16px 0;
+  }
 }
 
 .syllabus > * {
   width: 50%;
   flex-basis: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}
+.syllabus > img {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .syllabus__heading {
@@ -389,6 +475,10 @@ section {
   font-weight: 500;
   font-family: "Comfortaa", sans-serif;
   color: #333333;
+  @media screen and (max-width: 768px) {
+    font-size: 2.3rem;
+    margin-bottom: 48px;
+  }
 }
 
 .syllabus__step {
@@ -396,8 +486,17 @@ section {
   display: flex;
 }
 
+.syllabus__step-arrow {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+
 .syllabus__step--one {
   padding-left: 80px;
+  @media screen and (max-width: 768px) {
+    padding-left: 0;
+  }
 }
 
 .syllabus__step-heading {
@@ -408,7 +507,7 @@ section {
 }
 
 .syllabus__step-desc {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 300;
   font-family: "Open Sans", sans-serif;
   color: #1b1b1bbb;
@@ -428,6 +527,9 @@ section {
 .syllabus__step--one,
 .syllabus__step--two {
   margin-bottom: 48px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 56px;
+  }
 }
 .syllabus__step--one .syllabus__step-numb {
   position: absolute;
@@ -436,6 +538,15 @@ section {
 }
 .syllabus__step--one .syllabus__step-heading {
   margin-bottom: 24px;
+  @media screen and (max-width: 768px) {
+    padding-left: 70px;
+    margin-bottom: 12px;
+  }
+}
+.syllabus__step--one .syllabus__step-numb {
+  @media screen and (max-width: 768px) {
+    top: -5%;
+  }
 }
 
 .syllabus__step--two .syllabus__step-arrow {
@@ -445,14 +556,22 @@ section {
 .syllabus__step--two .syllabus__step-numb {
   position: relative;
   margin: 0 24px;
+  @media screen and (max-width: 768px) {
+    margin: 0 24px 0 0;
+  }
 }
 .syllabus__step--two .syllabus__step-heading-wrap {
   display: flex;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
 }
 .syllabus__step--two .syllabus__step-desc {
-  margin-left: 98px;
-  padding-right: 44px;
+  @media screen and (min-width: 768px) {
+    margin-left: 98px;
+    padding-right: 44px;
+  }
 }
 
 .page3 {
@@ -460,12 +579,21 @@ section {
 }
 .courses {
   padding: 160px 0;
+  @media screen and (max-width: 768px) {
+    padding: 56px 0;
+  }
 }
+
 .courses__headings-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 64px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 16px;
+    margin-bottom: 56px;
+  }
 }
 
 .courses__heading {
@@ -473,6 +601,13 @@ section {
   font-weight: 600;
   font-family: "Comfortaa", sans-serif;
   color: #fff;
+  @media screen and (max-width: 768px) {
+    font-size: 2.2rem;
+  }
+}
+.courses__heading br,
+.courses__subheading br {
+  display: none;
 }
 
 .courses__subheading {
@@ -480,11 +615,19 @@ section {
   font-size: 1.4rem;
   font-weight: 300;
   color: var(--subheading);
+  @media screen and (max-width: 768px) {
+    margin-top: 24px;
+    font-size: 1.2rem;
+  }
 }
 
 .courses__list {
   display: flex;
   gap: 32px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0 16px;
+  }
 }
 
 .courses__item {
@@ -498,6 +641,9 @@ section {
   padding: 48px 32px;
   min-height: 500px;
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    min-height: 400px;
+  }
 }
 
 .courses__item::before {
@@ -514,7 +660,7 @@ section {
   left: 0;
 }
 .courses__item:hover::before {
-  transform: scale(22);
+  transform: scale(25);
 }
 .courses__item:hover i {
   transform: translateX(10px);
@@ -547,7 +693,7 @@ section {
   text-decoration: none;
 }
 .courses__cta i {
-  font-size: 16px;
+  font-size: 1rem;
   margin-left: 4px;
   transition: transform 0.3s cubic-bezier(0.5, 1, 1, 1);
 }
@@ -563,15 +709,24 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  @media screen and (max-width: 768px) {
+    padding: 56px 16px;
+  }
 }
 
 .reviews__container {
   display: flex;
+  @media screen and (max-width: 768px) {
+    overflow-x: scroll;
+  }
 }
 .reviews__item {
   position: relative;
   padding: 0 64px 32px;
+  @media screen and (max-width: 768px) {
+    padding: 24px 0;
+    min-width: 100%;
+  }
 }
 .reviews__heading {
   width: 100%;
@@ -581,6 +736,10 @@ section {
   font-family: "Comfortaa", sans-serif;
   color: var(--black);
   margin-bottom: 64px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 48px;
+    font-size: 2.3rem;
+  }
 }
 .reviews__separator {
   height: 130px;
@@ -591,6 +750,9 @@ section {
   position: absolute;
   bottom: 32px;
   right: 0;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .reviews__name {
   font-size: 1.5rem;
@@ -601,7 +763,7 @@ section {
   text-align: center;
 }
 .reviews__description {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   line-height: 2.2rem;
@@ -620,7 +782,6 @@ section {
 }
 
 .page5 {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -634,6 +795,9 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 56px 16px;
+  }
 }
 
 .questions__content {
@@ -644,6 +808,10 @@ section {
 .questions__content > * {
   width: 50%;
   flex-basis: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    flex-basis: 100%;
+  }
 }
 
 .questions__heading {
@@ -652,6 +820,10 @@ section {
   color: #ffffff;
   font-family: "Comfortaa", sans-serif;
   margin-bottom: 40px;
+  @media screen and (max-width: 768px) {
+    font-size: 2.3rem;
+    margin-bottom: 16px;
+  }
 }
 
 .questions__subheading {
@@ -661,11 +833,19 @@ section {
   color: var(--subheading);
   margin-bottom: 48px;
   max-width: 520px;
+  @media screen and (max-width: 768px) {
+    font-size: 1.3rem;
+  }
 }
 
 .questions__input-wrapper {
   display: flex;
   padding-right: 32px;
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+  }
 }
 .questions__input {
   flex: 1;
@@ -679,6 +859,11 @@ section {
   color: var(--white);
   border: 1px solid var(--input-br);
   transition: all 0.25s ease-in-out;
+  @media screen and (max-width: 768px) {
+    margin-right: 0;
+    padding: 20px 24px;
+    height: 42px;
+  }
 }
 .questions__input::placeholder {
   color: var(--subheading);
@@ -706,6 +891,10 @@ section {
   transition: all 0.25s ease-in-out;
   position: relative;
   overflow: hidden;
+  @media screen and (max-width: 768px) {
+    padding: 12px 24px;
+    width: 100%;
+  }
 }
 .questions__submit::after {
   content: "";
@@ -737,6 +926,9 @@ section {
   background-image: url("./wordpress-bg.svg");
   background-repeat: no-repeat;
   background-position: bottom left 24px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 .questions__wordpress {
   position: relative;
@@ -756,10 +948,22 @@ section {
 .footer {
   width: 100%;
   padding: 60px 0;
+  @media screen and (max-width: 768px) {
+    padding: 48px 16px;
+  }
+}
+.footer__logo {
+  @media screen and (max-width: 768px) {
+    width: 150px;
+  }
 }
 .footer__row {
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 .footer__nav-col {
   display: grid;
@@ -767,6 +971,9 @@ section {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   row-gap: 20px;
   column-gap: 16px;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 }
 .footer__nav-link,
 .footer__nav-info {
@@ -800,9 +1007,15 @@ section {
   display: flex;
   align-items: center;
   column-gap: 64px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 .footer__separator {
   opacity: 0.4;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 }
 
 .footer__socials {
@@ -810,6 +1023,11 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 24px;
+  }
 }
 .footer__copyright {
   display: flex;
