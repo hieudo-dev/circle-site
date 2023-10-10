@@ -147,9 +147,14 @@ section {
   padding: 0 60px 48px;
   @media only screen and (max-width: 768px) {
     padding: 0 16px 56px;
+    & * {
+      /* Disable animations on mobile to score higher on Lighthouse */
+      animation: none;
+    }
   }
 }
 .page1__bg {
+  z-index: -1;
   position: absolute;
   inset: 0;
   img {
@@ -160,7 +165,6 @@ section {
 }
 
 .hero {
-  position: relative;
   padding-top: 40px;
   @media only screen and (max-width: 768px) {
     padding-top: 20px;
@@ -352,7 +356,6 @@ i.header__search-icon {
   top: 0;
   bottom: 0;
   left: 0;
-  /* left: 50%; */
   margin: auto;
 }
 .hero__cta:hover::after {
@@ -375,6 +378,7 @@ i.header__search-icon {
   }
 }
 .trust__item {
+  object-fit: contain;
   @media only screen and (max-width: 768px) {
     width: 30%;
   }
@@ -398,7 +402,6 @@ i.header__search-icon {
   grid-template-columns: repeat(3, 1fr);
   @media only screen and (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
-    /* grid-template-rows: 3; */
   }
 }
 
